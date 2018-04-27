@@ -3,9 +3,9 @@ const webpack = require('webpack');
 
 
 module.exports = {
-  entry: './client/src/app.jsx',
+  entry: './src/app.jsx',
   output: {
-    path: path.resolve(__dirname, 'client'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   resolve: {
@@ -16,7 +16,10 @@ module.exports = {
      {
       test: /\.jsx?$/,
       include: [
-        path.resolve(__dirname, 'client/src'),
+        path.resolve(__dirname, 'src'),
+      ],
+      exclude: [
+        path.resolve(__dirname, 'dist'),
       ],
       loader: 'babel-loader',
       options: {
