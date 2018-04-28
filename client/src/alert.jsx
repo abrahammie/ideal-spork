@@ -6,8 +6,10 @@ export const Alert = (props) => {
 
   return (
     <Card
-      href=''
-      header={`${props.num} tasks due ${props.day}`}
+      //href=''
+      color="yellow"
+      header={props.num}
+      description={`tasks due ${props.day}`}
     />
   );
 };
