@@ -1,2 +1,4 @@
-node_modules
-client/bundle.js
+client/node_modules
+client/dist/bundle.js
+
+server/node_modules
