@@ -1,0 +1,29 @@
+version: "3"
+services:
+  web:
+    container_name: web
+    build: ./client
+    ports:
+      - "8080:80"
+    # volumes:
+    #   - ./client:/app
+    links:
+      - tasks
+  tasks:
+    container_name: tasks
+    restart: always
+    build: ./tasks
+    ports:
+      - "3000:3000"
+    # volumes:
+    #   - ./tasks:/app
+    #   - ./tasks/node_modules
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
