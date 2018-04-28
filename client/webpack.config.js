@@ -15,19 +15,23 @@ module.exports = {
   },
   module: {
     rules: [
-     {
-      test: /\.jsx?$/,
-      include: [
-        path.resolve(__dirname, 'src'),
-      ],
-      exclude: [
-        path.resolve(__dirname, 'dist'),
-      ],
-      loader: 'babel-loader',
-      options: {
-        presets: ['react', 'env'],
+      {
+        test: /\.jsx?$/,
+        include: [
+          path.resolve(__dirname, 'src'),
+        ],
+        exclude: [
+          path.resolve(__dirname, 'dist'),
+        ],
+        loader: 'babel-loader',
+        options: {
+          presets: ['react', 'env'],
+        },
       },
-     },
+      {
+        test: /\.css$/,
+        loader: ['style-loader', 'css-loader'],
+      },
     ],
   },
 };
