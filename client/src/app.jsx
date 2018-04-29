@@ -5,7 +5,8 @@ import { TaskSheet } from './taskSheet.jsx';
 
 const style = {
   mainDisplay: {
-    margin: '40px 40px',
+    margin: '40px auto',
+    maxWidth: 900,
   },
 };
 
@@ -13,6 +14,10 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
+      inputName: null,
+      inputDescription: null,
+      inputDate: null,
+      formError: false,
       tasks: [
         {
           name: 'walk the dog',
@@ -46,12 +51,23 @@ class App extends React.Component{
         }
       ],
     };
+    this.changeDate = this.changeDate.bind(this);
+  };
+
+  changeDate(date) {
+    this.setState({
+      inputDate: date,
+    });
   };
 
   render() {
     return (
-    <div style={style.mainDisplay}>
-      <TaskSheet {...this.state} />
+    <div
+      style={style.mainDisplay}>
+      <TaskSheet
+        {...this.state}
+        changeDate={this.changeDate}
+      />
     </div>
     );
   };
