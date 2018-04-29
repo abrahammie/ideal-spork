@@ -32,7 +32,7 @@ export const TaskViewNavigation = (props) => {
           </Menu>
         </Grid.Column>
 
-        <Grid.Column stretched width={12}>
+        <Grid.Column stretched width={11}>
           <TaskList
             view={view}
             tasks={tasks}
