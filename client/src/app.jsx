@@ -79,8 +79,6 @@ class App extends React.Component{
 
   // toggle task view
   handleItemClick(e, { name }) {
-    console.log('e',e)
-    console.log('name',name)
     this.setState({ view: name });
   }
 
