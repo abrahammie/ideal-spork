@@ -4,7 +4,7 @@ import moment from 'moment';
 import { Segment, Card } from 'semantic-ui-react';
 import { Alert } from './alert.jsx';
 import { NewTaskInput } from './newTaskInput.jsx';
-import { TaskViewNavigation } from './TaskViewNavigation.jsx';
+import { TaskViewNavigation } from './taskViewNavigation.jsx';
 
 const style = {
   mainDisplay: {
@@ -79,21 +79,35 @@ class App extends React.Component{
 
   // toggle task view
   handleItemClick(e, { name }) {
+    console.log('e',e)
+    console.log('name',name)
     this.setState({ view: name });
+  }
+
+  // check if due today or tomorrow
+  isDueSoon(taskItem) {
+    const todaysDate = moment();
+    const tomorrow = moment().add(1, 'days');
+    return !taskItem.completed &&
+      (taskItem.date.isSame(todaysDate, 'day') ||
+      taskItem.date.isSame(tomorrow, 'day'));
+  }
+
+  // check if overdue
+  isOverdue(taskItem) {
+    return !taskItem.completed &&
+      taskItem.date.isBefore(moment(), 'day');
   }
 
   render() {
     const { tasks, inputDate, inputName, inputDescription, formError, view } = this.state;
 
-    const todaysDate = moment();
-    const tomorrow = moment().add(1, 'days');
-
-    // get totals for tasks due today/tomorrow
-    const tasksDueSoon = tasks.reduce((obj, task) => {
-      if (task.date.isSame(todaysDate, 'day')) {
-        obj.today = obj.today ? ++obj.today : 1;
-      } else if (task.date.isSame(tomorrow, 'day')) {
-        obj.tomorrow = obj.tomorrow ? ++obj.tomorrow : 1;
+    // get totals for tasks due soon or overdue
+    const tasksDue = tasks.reduce((obj, task) => {
+      if (this.isDueSoon(task)) {
+        obj.soon = obj.soon ? ++obj.soon : 1;
+      } else if (this.isOverdue(task)) {
+        obj.overdue = obj.overdue ? ++obj.overdue : 1;
       };
       return obj;
     },{});
@@ -112,10 +126,22 @@ class App extends React.Component{
                 <h1>My Tasks</h1>
               </Card.Content>
             </Card>
-            {tasksDueSoon.today ?
-              (<Alert num={tasksDueSoon.today} day="today"/>) : null}
-            {tasksDueSoon.tomorrow ?
-              (<Alert num={tasksDueSoon.tomorrow} day="tomorrow"/>) : null}
+            {tasksDue.soon ?
+              (<Alert
+                label="Due Today Or Tomorrow"
+                icon="wait"
+                handleItemClick={this.handleItemClick}
+                num={tasksDue.soon}
+                when="due soon"/>)
+              : null}
+            {tasksDue.overdue ?
+              (<Alert
+                label="Overdue"
+                icon="warning sign"
+                handleItemClick={this.handleItemClick}
+                num={tasksDue.overdue}
+                when="overdue"/>)
+              : null}
           </Card.Group>
           <br/>
           <NewTaskInput
