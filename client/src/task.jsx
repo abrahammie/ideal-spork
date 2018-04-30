@@ -13,12 +13,17 @@ const style = {
   buttons: {
     border: '1px solid #d4d4d5',
   },
+  segment: {
+    margin: 0,
+  },
 };
 
 export const Task = props => {
   const { name, description, date, completed, deleteTask, completeTask } = props;
   return (
-    <Segment basic>
+    <Segment
+      basic
+      style={style.segment}>
       <Card>
         <Card.Content
           style={style.content}>
