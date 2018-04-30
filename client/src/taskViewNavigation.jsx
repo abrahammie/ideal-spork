@@ -2,10 +2,17 @@ import React from 'react';
 import { Segment, Grid, Menu } from 'semantic-ui-react';
 import { TaskList } from './taskList.jsx';
 
+const style = {
+  segment: {
+    minHeight: 330,
+  },
+};
+
 export const TaskViewNavigation = (props) => {
   const { handleItemClick, view } = props;
   return (
-    <Segment>
+    <Segment
+      style={style.segment}>
       <Grid>
         <Grid.Column width={5}>
           <Menu fluid vertical tabular>
