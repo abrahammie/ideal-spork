@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
+import axios from 'axios';
 import { Segment, Card } from 'semantic-ui-react';
 import { Alert } from './alert.jsx';
 import { NewTaskInput } from './newTaskInput.jsx';
@@ -10,6 +11,9 @@ const style = {
   mainDisplay: {
     margin: '40px auto',
     maxWidth: 900,
+  },
+  segment: {
+    backgroundColor: 'rgba(243, 240, 240, 0.75)',
   },
 };
 
@@ -23,53 +27,98 @@ class App extends React.Component{
       formError: false,
       view: 'All Incomplete',
       tasks: [
-        {
-          name: 'walk the dog',
-          description: 'benny',
-          date: moment(),
-          completed: false,
-        },
-        {
-          name: 'pick up laundry',
-          description: '123 gold st.',
-          date: moment().subtract(12, 'days'),
-          completed: false,
-        },
-        {
-          name: 'build an app',
-          description: 'Lorem ipsum dolor sit amet, ea est malorum vituperatoribus. Eirmod democritum omittantur ne sit, dolorum vocibus interesset et mei. Nam zril tamquam delicata te. Simul ubique iudicabit ei mea. Sit an rebum aliquando. Nec electram efficiantur ei, mei esse paulo contentiones ea. In vel posse percipit efficiendi, ridens nostro omittantur his ad. Ius integre salutandi mediocritatem ea, mutat tantas eam eu. An nec alii quaestio, sit ea reque vitae. Suas ipsum gubergren ut his, te eum porro eligendi. His oblique fastidii ad. Ad vis eirmod voluptua. Has et verterem hendrerit. Elit iracundia mel ei. Pro id phaedrum dissentias theophrastus, nam at audiam honestatis scriptorem. Veri graece animal no eam, qui cu copiosae theophrastus. In esse utroque senserit ius, civibus appareat eu duo. Sonet deleniti disputationi mei cu. Populo iuvaret iracundia pri te. Minim equidem lucilius qui no, eu per fuisset repudiandae delicatissimi. Duo nibh omittantur et.',
-          date: moment().add(1, 'days'),
-          completed: false,
-        },
-        {
-          name: 'pick up groceries',
-          description: 'tomato, potato',
-          date: moment().add(1, 'days'),
-          completed: false,
-        },
-        {
-          name: 'call bob',
-          description: '212-123-4567',
-          date: moment().add(4, 'days'),
-          completed: false,
-        },
-        {
-          name: 'do the dishes',
-          description: 'or not',
-          date: moment().subtract(1, 'days'),
-          completed: false,
-        },
-        {
-          name: 'walk the dog',
-          description: 'rusty',
-          date: moment().subtract(8, 'days'),
-          completed: true,
-        }
+        // {
+        //   id: 12345,
+        //   name: 'walk the dog',
+        //   description: 'benny',
+        //   date: moment(),
+        //   completed: false,
+        // },
+        // {
+        //   id: 123456,
+        //   name: 'pick up laundry',
+        //   description: '123 gold st.',
+        //   date: moment().subtract(12, 'days'),
+        //   completed: false,
+        // },
+        // {
+        //   id: 123457,
+        //   name: 'build an app',
+        //   description: 'Lorem ipsum dolor sit amet, ea est malorum vituperatoribus. Eirmod democritum omittantur ne sit, dolorum vocibus interesset et mei. Nam zril tamquam delicata te. Simul ubique iudicabit ei mea. Sit an rebum aliquando. Nec electram efficiantur ei, mei esse paulo contentiones ea. In vel posse percipit efficiendi, ridens nostro omittantur his ad. Ius integre salutandi mediocritatem ea, mutat tantas eam eu.',
+        //   date: moment().add(1, 'days'),
+        //   completed: false,
+        // },
+        // {
+        //   id: 123458,
+        //   name: 'pick up groceries',
+        //   description: 'tomato, potato',
+        //   date: moment().add(1, 'days'),
+        //   completed: false,
+        // },
+        // {
+        //   id: 123459,
+        //   name: 'call bob',
+        //   description: '212-123-4567',
+        //   date: moment().add(4, 'days'),
+        //   completed: false,
+        // },
+        // {
+        //   id: 123450,
+        //   name: 'do the dishes',
+        //   description: 'or not',
+        //   date: moment().subtract(1, 'days'),
+        //   completed: false,
+        // },
+        // {
+        //   id: 1234511,
+        //   name: 'walk the dog',
+        //   description: 'rusty',
+        //   date: moment().subtract(8, 'days'),
+        //   completed: true,
+        // }
       ],
     };
+    this.submitTask = this.submitTask.bind(this);
     this.changeDate = this.changeDate.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.completeTask = this.completeTask.bind(this);
+    this.deleteTask = this.deleteTask.bind(this);
   };
+
+  componentWillMount() {
+    // get tasks from api on mount
+    axios.get(`${process.env.TASK_SERVICE_URL}/api/getTasks`)
+      .then(res => this.setState({ tasks: res.tasks },
+        () => console.log(this.state.tasks)))
+      .catch(err => console.log(err));
+  }
+
+  submitTask() {
+    this.setState({ formError: false });
+    // check for required fields
+    if (this.state.inputName && this.state.inputDate) {
+      axios.post(`${process.env.TASK_SERVICE_URL}/api/add`,
+        {
+          newTask: {
+            name: this.state.inputName,
+            description: this.state.inputDescription,
+            date: this.state.inputDate,
+          }
+        })
+        .then(res => this.setState(
+          {
+            tasks: res.tasks,
+            inputName: null,
+            inputDescription: null,
+            inputDate: null,
+          }
+        ))
+        .catch(err => console.log(err));
+    } else {
+      this.setState({ formError: true });
+    }
+  }
 
   changeDate(date) {
     this.setState({
@@ -80,6 +129,27 @@ class App extends React.Component{
   // toggle task view
   handleItemClick(e, { name }) {
     this.setState({ view: name });
+  }
+
+  handleChange(e) {
+    // passed to newTaskInput form fields
+    const obj = {};
+    obj[e.target.id] = e.target.value;
+    this.setState(obj);
+  }
+
+  completeTask(taskId) {
+    console.log('complete task called')
+    axios.post(`${process.env.TASK_SERVICE_URL}/api/complete`, { taskId })
+      .then(res => this.setState({ tasks: res.tasks }))
+      .catch(err => console.log(err));
+  }
+
+  deleteTask(taskId) {
+    // trigger a confirm?
+    axios.delete(`${process.env.TASK_SERVICE_URL}/api/delete`, { taskId })
+      .then(res => this.setState({ tasks: res.tasks }))
+      .catch(err => console.log(err));
   }
 
   // check if due today or tomorrow
@@ -114,6 +184,7 @@ class App extends React.Component{
       <div
         style={style.mainDisplay}>
         <Segment
+          style={style.segment}
           raised>
           <Card.Group
             itemsPerRow={3}>
@@ -147,6 +218,8 @@ class App extends React.Component{
             inputName={inputName}
             inputDescription={inputDescription}
             changeDate={this.changeDate}
+            submitTask={this.submitTask}
+            handleChange={this.handleChange}
             formError={formError}
           />
           <br/>
@@ -154,6 +227,10 @@ class App extends React.Component{
             view={view}
             handleItemClick={this.handleItemClick}
             tasks={tasks}
+            completeTask={this.completeTask}
+            deleteTask={this.deleteTask}
+            isDueSoon={this.isDueSoon}
+            isOverdue={this.isOverdue}
           />
         </Segment>
       </div>

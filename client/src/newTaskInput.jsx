@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import { Segment } from 'semantic-ui-react';
-import { Button, Form, Message, Header } from 'semantic-ui-react';
+import { Button, Form, Message, Header, Input } from 'semantic-ui-react';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const style = {
@@ -12,14 +12,14 @@ const style = {
 };
 
 export const NewTaskInput = (props) => {
-  // console.log('Props in newtaskinput',props)
+  const { formError, inputName, inputDescription, inputDate, submitTask, handleChange, changeDate } = props;
   return (
     <div>
       <Segment
         raised
         style={style.bg}>
         <Form
-          error={props.formError}>
+          error={formError}>
           <Header
             as="h3"
             floated="left">
@@ -27,24 +27,31 @@ export const NewTaskInput = (props) => {
           </Header>
           <Form.Group
             size="tiny">
-            <Form.Input
+            <Form.Field
               width={4}
-              placeholder={props.inputName || 'Task name'}
+              control={Input}
+              id="inputName"
+              placeholder={inputName || 'Task name'}
+              onChange={handleChange}
             />
-            <Form.Input
+            <Form.Field
               width={8}
-              placeholder={props.inputDescription || 'Description'}
+              control={Input}
+              id="inputDescription"
+              placeholder={inputDescription || 'Description'}
+              onChange={handleChange}
             />
           <DatePicker
-            selected={props.inputDate ? props.inputDate : null}
-            onChange={props.changeDate}
+            selected={inputDate ? inputDate : null}
+            onChange={changeDate}
             placeholderText="Click to select due date"
           />
           </Form.Group>
           <Button
             compact
             color="yellow"
-            size="mini">
+            size="mini"
+            onClick={submitTask}>
             Submit
           </Button>
           <Message
