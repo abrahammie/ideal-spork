@@ -3,11 +3,11 @@ import { Card, Icon } from 'semantic-ui-react';
 
 const style = {
   'due soon': {
-    color: '#fbddb2',
+    color: 'gold',
     align: 'center',
   },
   overdue: {
-    color: 'red',
+    color: 'crimson',
   },
   card: {
     maxWidth: 100,
