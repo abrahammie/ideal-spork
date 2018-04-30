@@ -3,7 +3,7 @@ import { Segment, Grid, Menu } from 'semantic-ui-react';
 import { TaskList } from './taskList.jsx';
 
 export const TaskViewNavigation = (props) => {
-  const { handleItemClick, view, tasks } = props;
+  const { handleItemClick, view } = props;
   return (
     <Segment>
       <Grid>
@@ -31,11 +31,9 @@ export const TaskViewNavigation = (props) => {
             />
           </Menu>
         </Grid.Column>
-
         <Grid.Column stretched width={11}>
           <TaskList
-            view={view}
-            tasks={tasks}
+            {...props}
            />
         </Grid.Column>
       </Grid>
