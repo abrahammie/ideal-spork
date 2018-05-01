@@ -37,9 +37,8 @@ class App extends React.Component{
   };
 
   componentWillMount() {
-    console.log('jesus fucking chr')
     // get tasks from api on mount
-    axios.get(`http://tasks-1:300/api/getTasks`)
+    axios.get(`http://tasks:3001/api/getTasks`)
       .then(res => {
         // convert js date to moment
         let tasksWithMomentDate = res.tasks.map(task => {

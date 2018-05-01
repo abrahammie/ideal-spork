@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 const helpers = require('./helpers.js');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 // return all tasks
 app.get('/api/getTasks', (req, res) => {
-  console.log('getTasks calledddddddddddddddd')
+  console.log('getTasks called')
   helpers.getAllTasks((err, data) => {
     if (err) {
       console.log('Error getting tasks:', err);
