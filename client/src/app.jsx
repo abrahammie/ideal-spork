@@ -26,57 +26,7 @@ class App extends React.Component{
       inputDate: null,
       formError: false,
       view: 'All Incomplete',
-      tasks: [
-        // {
-        //   id: 12345,
-        //   name: 'walk the dog',
-        //   description: 'benny',
-        //   date: moment(),
-        //   completed: false,
-        // },
-        // {
-        //   id: 123456,
-        //   name: 'pick up laundry',
-        //   description: '123 gold st.',
-        //   date: moment().subtract(12, 'days'),
-        //   completed: false,
-        // },
-        // {
-        //   id: 123457,
-        //   name: 'build an app',
-        //   description: 'Lorem ipsum dolor sit amet, ea est malorum vituperatoribus. Eirmod democritum omittantur ne sit, dolorum vocibus interesset et mei. Nam zril tamquam delicata te. Simul ubique iudicabit ei mea. Sit an rebum aliquando. Nec electram efficiantur ei, mei esse paulo contentiones ea. In vel posse percipit efficiendi, ridens nostro omittantur his ad. Ius integre salutandi mediocritatem ea, mutat tantas eam eu.',
-        //   date: moment().add(1, 'days'),
-        //   completed: false,
-        // },
-        // {
-        //   id: 123458,
-        //   name: 'pick up groceries',
-        //   description: 'tomato, potato',
-        //   date: moment().add(1, 'days'),
-        //   completed: false,
-        // },
-        // {
-        //   id: 123459,
-        //   name: 'call bob',
-        //   description: '212-123-4567',
-        //   date: moment().add(4, 'days'),
-        //   completed: false,
-        // },
-        // {
-        //   id: 123450,
-        //   name: 'do the dishes',
-        //   description: 'or not',
-        //   date: moment().subtract(1, 'days'),
-        //   completed: false,
-        // },
-        // {
-        //   id: 1234511,
-        //   name: 'walk the dog',
-        //   description: 'rusty',
-        //   date: moment().subtract(8, 'days'),
-        //   completed: true,
-        // }
-      ],
+      tasks: [],
     };
     this.submitTask = this.submitTask.bind(this);
     this.changeDate = this.changeDate.bind(this);
@@ -88,9 +38,16 @@ class App extends React.Component{
 
   componentWillMount() {
     // get tasks from api on mount
-    axios.get(`${process.env.TASK_SERVICE_URL}/api/getTasks`)
-      .then(res => this.setState({ tasks: res.tasks },
-        () => console.log(this.state.tasks)))
+    axios.get(`http://tasks:3001/api/getTasks`)
+      .then(res => {
+        // convert js date to moment
+        let tasksWithMomentDate = res.tasks.map(task => {
+          task.date = moment(task.date);
+          return task;
+        });
+        this.setState({ tasks: tasksWithMomentDate },
+        () => console.log(this.state.tasks))
+      })
       .catch(err => console.log(err));
   }
 
@@ -98,7 +55,7 @@ class App extends React.Component{
     this.setState({ formError: false });
     // check for required fields
     if (this.state.inputName && this.state.inputDate) {
-      axios.post(`${process.env.TASK_SERVICE_URL}/api/add`,
+      axios.post('http://tasks/api/add',
         {
           newTask: {
             name: this.state.inputName,
@@ -140,14 +97,13 @@ class App extends React.Component{
 
   completeTask(taskId) {
     console.log('complete task called')
-    axios.post(`${process.env.TASK_SERVICE_URL}/api/complete`, { taskId })
+    axios.post('http://tasks/api/complete', { taskId })
       .then(res => this.setState({ tasks: res.tasks }))
       .catch(err => console.log(err));
   }
 
   deleteTask(taskId) {
-    // trigger a confirm?
-    axios.delete(`${process.env.TASK_SERVICE_URL}/api/delete`, { taskId })
+    axios.delete('http://tasks/api/delete', { taskId })
       .then(res => this.setState({ tasks: res.tasks }))
       .catch(err => console.log(err));
   }
