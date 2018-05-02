@@ -98,16 +98,16 @@ class App extends React.Component{
     this.setState(obj);
   }
 
-  completeTask(taskId) {
-    console.log('complete task called')
-    axios.post(`http://${document.location.hostname}:3001/api/complete`, { taskId })
+  completeTask(e, task) {
+    console.log('complete task called', task.id)
+    axios.post(`http://${document.location.hostname}:3001/api/complete`, { id: task.id })
       .then(res => this.setState({ tasks: convertToMomentDate(res.data.tasks) }))
       .catch(err => console.log(err));
   }
 
-  deleteTask(taskId) {
-    console.log('delete called:',arguments)
-    axios.delete(`http://${document.location.hostname}:3001/api/delete`, { taskId })
+  deleteTask(e, task) {
+    console.log('delete called:',task.id)
+    axios.delete(`http://${document.location.hostname}:3001/api/delete`, { params: { id: task.id }})
       .then(res => this.setState({ tasks: convertToMomentDate(res.data.tasks) }))
       .catch(err => console.log(err));
   }

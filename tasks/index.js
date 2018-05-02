@@ -34,7 +34,6 @@ app.post('/api/add', (req, res) => {
       console.log('Error adding task:', err);
       res.send(500);
     } else {
-      console.log(data)
       res.send(JSON.stringify({ tasks: data }));
     }
   });
@@ -42,8 +41,9 @@ app.post('/api/add', (req, res) => {
 
 // finds and deletes task from db
 app.delete('/api/delete', (req, res) => {
-  console.log('delete called')
-  helpers.deleteTask(req.body.newTask, (err, data) => {
+  console.log('delete called', req)
+  console.log('delete called', req.params)
+  helpers.deleteTask(req.query.id, (err, data) => {
     if (err) {
       console.log('Error deleting task:', err);
       res.send(500);
@@ -55,8 +55,8 @@ app.delete('/api/delete', (req, res) => {
 
 // finds and marks completed property true
 app.post('/api/complete', (req, res) => {
-  console.log('complete called')
-  helpers.markTaskCompleted(req.body.newTask, (err, data) => {
+  console.log('complete called:', req.body)
+  helpers.markTaskCompleted(req.body.id, (err, data) => {
     if (err) {
       console.log('Error editing task:', err);
       res.send(500);
