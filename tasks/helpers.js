@@ -55,10 +55,10 @@ const testData = [
 ];
 
 const getAllTasks = (callback) => {
-  callback(null, testData);
-  // db.Tasks.find()
-  //   .then(tasksArray => callback(null, tasksArray))
-  //   .catch(err => callback(err, null));
+  //callback(null, testData);
+  db.Task.find()
+    .then(tasksArray => callback(null, tasksArray))
+    .catch(err => callback(err, null));
 };
 
 const addNewTask = (taskData, callback) => {
@@ -93,7 +93,8 @@ const markTaskCompleted = (taskId, callback) => {
 };
 
 const deleteTask = (taskId, callback) => {
-  db.Task.findOneAndDelete({ _id: taskId })
+  console.log('delete:',taskId)
+  db.Task.deleteOne({ _id: taskId })
     .then(deletedTask => {
       console.log('Deleted:', deletedTask);
       getAllTasks(callback);

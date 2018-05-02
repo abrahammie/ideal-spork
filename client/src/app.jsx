@@ -17,6 +17,14 @@ const style = {
   },
 };
 
+// js date from db has to be converted to moment
+const convertToMomentDate = (tasksArray) => {
+  return tasksArray.map(task => {
+    task.date = moment(task.date);
+    return task;
+  });
+};
+
 class App extends React.Component{
   constructor(props) {
     super(props);
@@ -38,14 +46,9 @@ class App extends React.Component{
 
   componentWillMount() {
     // get tasks from api on mount
-    axios.get('http://tasks:3001/api/getTasks')
+    axios.get(`http://${document.location.hostname}:3001/api/getTasks`)
       .then(res => {
-        // convert js date to moment
-        let tasksWithMomentDate = res.tasks.map(task => {
-          task.date = moment(task.date);
-          return task;
-        });
-        this.setState({ tasks: tasksWithMomentDate },
+        this.setState({ tasks: convertToMomentDate(res.data.tasks) },
         () => console.log(this.state.tasks))
       })
       .catch(err => console.log('ERROR',err));
@@ -55,7 +58,7 @@ class App extends React.Component{
     this.setState({ formError: false });
     // check for required fields
     if (this.state.inputName && this.state.inputDate) {
-      axios.post('http://tasks/api/add',
+      axios.post(`http://${document.location.hostname}:3001/api/add`,
         {
           newTask: {
             name: this.state.inputName,
@@ -65,7 +68,7 @@ class App extends React.Component{
         })
         .then(res => this.setState(
           {
-            tasks: res.tasks,
+            tasks: convertToMomentDate(res.data.tasks),
             inputName: null,
             inputDescription: null,
             inputDate: null,
@@ -97,14 +100,15 @@ class App extends React.Component{
 
   completeTask(taskId) {
     console.log('complete task called')
-    axios.post('http://tasks/api/complete', { taskId })
-      .then(res => this.setState({ tasks: res.tasks }))
+    axios.post(`http://${document.location.hostname}:3001/api/complete`, { taskId })
+      .then(res => this.setState({ tasks: convertToMomentDate(res.data.tasks) }))
       .catch(err => console.log(err));
   }
 
   deleteTask(taskId) {
-    axios.delete('http://tasks/api/delete', { taskId })
-      .then(res => this.setState({ tasks: res.tasks }))
+    console.log('delete called:',arguments)
+    axios.delete(`http://${document.location.hostname}:3001/api/delete`, { taskId })
+      .then(res => this.setState({ tasks: convertToMomentDate(res.data.tasks) }))
       .catch(err => console.log(err));
   }
 
