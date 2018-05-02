@@ -9,6 +9,12 @@ const style = {
   bg: {
     backgroundColor: '#f1f5ef',
   },
+  head: {
+    marginBottom: 5,
+  },
+  button: {
+    marginTop: 10,
+  },
 };
 
 export const NewTaskInput = (props) => {
@@ -18,27 +24,29 @@ export const NewTaskInput = (props) => {
       <Segment
         raised
         style={style.bg}>
-        <Form
-          error={formError}>
           <Header
-            as="h3"
-            floated="left">
+            style={style.head}
+            as="h4">
             Add a task:
           </Header>
-          <Form.Group
-            size="tiny">
+        <Form
+          size="tiny"
+          error={formError}>
+          <Form.Group>
             <Form.Field
-              width={4}
+              width={5}
               control={Input}
+              value={inputName}
               id="inputName"
-              placeholder={inputName || 'Task name'}
+              label="Task name"
               onChange={handleChange}
             />
             <Form.Field
               width={8}
               control={Input}
+              value={inputDescription}
               id="inputDescription"
-              placeholder={inputDescription || 'Description'}
+              label="Description"
               onChange={handleChange}
             />
           <DatePicker
@@ -49,6 +57,7 @@ export const NewTaskInput = (props) => {
           </Form.Group>
           <Button
             compact
+            style={style.button}
             color="yellow"
             size="mini"
             onClick={submitTask}>

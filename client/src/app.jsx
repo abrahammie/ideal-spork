@@ -29,8 +29,8 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      inputName: null,
-      inputDescription: null,
+      inputName: '',
+      inputDescription: '',
       inputDate: null,
       formError: false,
       view: 'All Incomplete',
@@ -69,8 +69,8 @@ class App extends React.Component{
         })
         .then(res => this.setState(
           {
-            inputName: null,
-            inputDescription: null,
+            inputName: '',
+            inputDescription: '',
             inputDate: null,
             tasks: convertToMomentDate(res.data.tasks),
           }, () => console.log('input should be null',this.state)
