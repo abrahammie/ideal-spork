@@ -67,6 +67,7 @@ export const TaskList = (props) => {
           return (
             <Task
               key={item.id}
+              deleteTask={deleteTask}
               {...item}
             />
           );

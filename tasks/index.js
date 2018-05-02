@@ -16,7 +16,6 @@ app.get('/', (req, res) => {
 
 // return all tasks
 app.get('/api/getTasks', (req, res) => {
-  console.log('getTasks called')
   helpers.getAllTasks((err, data) => {
     if (err) {
       console.log('Error getting tasks:', err);
@@ -41,8 +40,6 @@ app.post('/api/add', (req, res) => {
 
 // finds and deletes task from db
 app.delete('/api/delete', (req, res) => {
-  console.log('delete called', req)
-  console.log('delete called', req.params)
   helpers.deleteTask(req.query.id, (err, data) => {
     if (err) {
       console.log('Error deleting task:', err);
@@ -55,7 +52,6 @@ app.delete('/api/delete', (req, res) => {
 
 // finds and marks completed property true
 app.post('/api/complete', (req, res) => {
-  console.log('complete called:', req.body)
   helpers.markTaskCompleted(req.body.id, (err, data) => {
     if (err) {
       console.log('Error editing task:', err);

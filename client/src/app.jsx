@@ -46,7 +46,8 @@ class App extends React.Component{
 
   componentWillMount() {
     // get tasks from api on mount
-    axios.get(`http://${document.location.hostname}:3001/api/getTasks`)
+    axios.get(
+      `http://${document.location.hostname}:3001/api/getTasks`)
       .then(res => {
         this.setState({ tasks: convertToMomentDate(res.data.tasks) },
         () => console.log(this.state.tasks))
@@ -68,11 +69,11 @@ class App extends React.Component{
         })
         .then(res => this.setState(
           {
-            tasks: convertToMomentDate(res.data.tasks),
             inputName: null,
             inputDescription: null,
             inputDate: null,
-          }
+            tasks: convertToMomentDate(res.data.tasks),
+          }, () => console.log('input should be null',this.state)
         ))
         .catch(err => console.log(err));
     } else {
@@ -99,14 +100,12 @@ class App extends React.Component{
   }
 
   completeTask(e, task) {
-    console.log('complete task called', task.id)
     axios.post(`http://${document.location.hostname}:3001/api/complete`, { id: task.id })
       .then(res => this.setState({ tasks: convertToMomentDate(res.data.tasks) }))
       .catch(err => console.log(err));
   }
 
   deleteTask(e, task) {
-    console.log('delete called:',task.id)
     axios.delete(`http://${document.location.hostname}:3001/api/delete`, { params: { id: task.id }})
       .then(res => this.setState({ tasks: convertToMomentDate(res.data.tasks) }))
       .catch(err => console.log(err));
