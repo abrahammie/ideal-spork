@@ -19,7 +19,7 @@ const style = {
 };
 
 export const Task = props => {
-  const { name, description, date, completed, deleteTask, completeTask } = props;
+  const { name, description, date, _id, completed, deleteTask, completeTask } = props;
   return (
     <Segment
       basic
@@ -43,6 +43,7 @@ export const Task = props => {
           {completed ? null :
             (<Button
               compact
+              id={_id}
               size="mini"
               style={style.button}
               onClick={completeTask}>
@@ -54,6 +55,7 @@ export const Task = props => {
           }
           <Button
             compact
+            id={_id}
             size="mini"
             style={style.button}
             onClick={deleteTask}>

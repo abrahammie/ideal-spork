@@ -1,12 +1,14 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const app = express();
 const helpers = require('./helpers.js');
 
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');
@@ -14,7 +16,6 @@ app.get('/', (req, res) => {
 
 // return all tasks
 app.get('/api/getTasks', (req, res) => {
-  console.log('getTasks called')
   helpers.getAllTasks((err, data) => {
     if (err) {
       console.log('Error getting tasks:', err);
@@ -26,9 +27,8 @@ app.get('/api/getTasks', (req, res) => {
 });
 
 // adds a task to db
-app.get('/api/add', (req, res) => {
-  console.log('add called')
-  helpers.addNewTask((err, data) => {
+app.post('/api/add', (req, res) => {
+  helpers.addNewTask(req.body.newTask, (err, data) => {
     if (err) {
       console.log('Error adding task:', err);
       res.send(500);
@@ -39,9 +39,8 @@ app.get('/api/add', (req, res) => {
 });
 
 // finds and deletes task from db
-app.get('/api/delete', (req, res) => {
-  console.log('delete called')
-  helpers.deleteTask((err, data) => {
+app.delete('/api/delete', (req, res) => {
+  helpers.deleteTask(req.query.id, (err, data) => {
     if (err) {
       console.log('Error deleting task:', err);
       res.send(500);
@@ -52,9 +51,8 @@ app.get('/api/delete', (req, res) => {
 });
 
 // finds and marks completed property true
-app.get('/api/complete', (req, res) => {
-  console.log('complete called')
-  helpers.markTaskCompleted((err, data) => {
+app.post('/api/complete', (req, res) => {
+  helpers.markTaskCompleted(req.body.id, (err, data) => {
     if (err) {
       console.log('Error editing task:', err);
       res.send(500);
