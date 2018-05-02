@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: App renders a snapshot 1`] = `
+<div
+  style={
+    Object {
+      "margin": "40px auto",
+      "maxWidth": 900,
+    }
+  }
+>
+  <div
+    className="ui raised segment"
+    style={
+      Object {
+        "backgroundColor": "rgba(243, 240, 240, 0.75)",
+      }
+    }
+  >
+    <div
+      className="ui three cards"
+    >
+      <div
+        className="ui grey card"
+        href={undefined}
+        onClick={[Function]}
+      >
+        <div
+          className="center aligned content"
+        >
+          <h1>
+            My Tasks
+          </h1>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div>
+      <div
+        className="ui raised segment"
+        style={
+          Object {
+            "backgroundColor": "#f1f5ef",
+          }
+        }
+      >
+        <h4
+          className="ui header"
+          style={
+            Object {
+              "marginBottom": 5,
+            }
+          }
+        >
+          Add a task:
+        </h4>
+        <form
+          action={undefined}
+          className="ui tiny form"
+          onSubmit={[Function]}
+        >
+          <div
+            className="fields"
+          >
+            <div
+              className="five wide field"
+            >
+              <label
+                htmlFor="inputName"
+              >
+                Task name
+              </label>
+              <div
+                className="ui input"
+                content={undefined}
+              >
+                <input
+                  disabled={undefined}
+                  id="inputName"
+                  onChange={[Function]}
+                  required={undefined}
+                  tabIndex={undefined}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              className="eight wide field"
+            >
+              <label
+                htmlFor="inputDescription"
+              >
+                Description
+              </label>
+              <div
+                className="ui input"
+                content={undefined}
+              >
+                <input
+                  disabled={undefined}
+                  id="inputDescription"
+                  onChange={[Function]}
+                  required={undefined}
+                  tabIndex={undefined}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div>
+              <div
+                className="react-datepicker-wrapper"
+              >
+                <div
+                  className="react-datepicker__input-container"
+                >
+                  <input
+                    autoComplete={undefined}
+                    autoFocus={undefined}
+                    className=""
+                    disabled={false}
+                    id={undefined}
+                    name={undefined}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Click to select due date"
+                    readOnly={undefined}
+                    required={undefined}
+                    tabIndex={undefined}
+                    title={undefined}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            className="ui yellow mini compact button"
+            disabled={undefined}
+            onClick={[Function]}
+            role="button"
+            style={
+              Object {
+                "marginTop": 10,
+              }
+            }
+            tabIndex={undefined}
+          >
+            Submit
+          </button>
+          <div
+            className="ui mini error message"
+          >
+            <div
+              className="content"
+            >
+              <p>
+                Task name and date are required.
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div
+      className="ui segment"
+      style={
+        Object {
+          "minHeight": 330,
+        }
+      }
+    >
+      <div
+        className="ui grid"
+      >
+        <div
+          className="five wide column"
+        >
+          <div
+            className="ui fluid vertical tabular menu"
+          >
+            <a
+              className="active item"
+              onClick={[Function]}
+            >
+              All Incomplete
+            </a>
+            <a
+              className="item"
+              onClick={[Function]}
+            >
+              Due Today Or Tomorrow
+            </a>
+            <a
+              className="item"
+              onClick={[Function]}
+            >
+              Overdue
+            </a>
+            <a
+              className="item"
+              onClick={[Function]}
+            >
+              Completed
+            </a>
+          </div>
+        </div>
+        <div
+          className="stretched eleven wide column"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
