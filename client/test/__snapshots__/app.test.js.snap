@@ -1150,961 +1150,218 @@ exports[`Component: App renders a snapshot 1`] = `
 `;
 
 exports[`Component: NewTaskInput renders error state 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <NewTaskInput
-    formError={true}
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": <Segment
-        raised={true}
+<div>
+  <Segment
+    raised={true}
+    style={
+      Object {
+        "backgroundColor": "#f1f5ef",
+      }
+    }
+  >
+    <Header
+      as="h4"
+      style={
+        Object {
+          "marginBottom": 5,
+        }
+      }
+    >
+      Add a task:
+    </Header>
+    <Form
+      as="form"
+      error={true}
+      size="tiny"
+    >
+      <FormGroup>
+        <FormField
+          control={[Function]}
+          id="inputName"
+          label="Task name"
+          width={5}
+        />
+        <FormField
+          control={[Function]}
+          id="inputDescription"
+          label="Description"
+          width={8}
+        />
+        <DatePicker
+          allowSameDay={false}
+          dateFormat="L"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={false}
+          disabledKeyboardNavigation={false}
+          dropdownMode="scroll"
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          onYearChange={[Function]}
+          placeholderText="Click to select due date"
+          preventOpenOnFocus={false}
+          selected={null}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          timeCaption="Time"
+          timeIntervals={30}
+          withPortal={false}
+        />
+      </FormGroup>
+      <Button
+        as="button"
+        color="yellow"
+        compact={true}
+        size="mini"
         style={
           Object {
-            "backgroundColor": "#f1f5ef",
+            "marginTop": 10,
           }
         }
+        type="submit"
       >
-        <Header
-          as="h4"
-          style={
-            Object {
-              "marginBottom": 5,
-            }
-          }
-        >
-          Add a task:
-        </Header>
-        <Form
-          as="form"
-          error={true}
-          size="tiny"
-        >
-          <FormGroup>
-            <FormField
-              control={[Function]}
-              id="inputName"
-              label="Task name"
-              onChange={undefined}
-              value={undefined}
-              width={5}
-            />
-            <FormField
-              control={[Function]}
-              id="inputDescription"
-              label="Description"
-              onChange={undefined}
-              value={undefined}
-              width={8}
-            />
-            <DatePicker
-              allowSameDay={false}
-              dateFormat="L"
-              dateFormatCalendar="MMMM YYYY"
-              disabled={false}
-              disabledKeyboardNavigation={false}
-              dropdownMode="scroll"
-              monthsShown={1}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onClickOutside={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMonthChange={[Function]}
-              onSelect={[Function]}
-              onYearChange={[Function]}
-              placeholderText="Click to select due date"
-              preventOpenOnFocus={false}
-              selected={null}
-              shouldCloseOnSelect={true}
-              showTimeSelect={false}
-              timeCaption="Time"
-              timeIntervals={30}
-              withPortal={false}
-            />
-          </FormGroup>
-          <Button
-            as="button"
-            color="yellow"
-            compact={true}
-            onClick={undefined}
-            size="mini"
-            style={
-              Object {
-                "marginTop": 10,
-              }
-            }
-            type="submit"
-          >
-            Submit
-          </Button>
-          <Message
-            content="Task name and date are required."
-            error={true}
-            size="mini"
-          />
-        </Form>
-      </Segment>,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          <Header
-            as="h4"
-            style={
-              Object {
-                "marginBottom": 5,
-              }
-            }
-          >
-            Add a task:
-          </Header>,
-          <Form
-            as="form"
-            error={true}
-            size="tiny"
-          >
-            <FormGroup>
-              <FormField
-                control={[Function]}
-                id="inputName"
-                label="Task name"
-                onChange={undefined}
-                value={undefined}
-                width={5}
-              />
-              <FormField
-                control={[Function]}
-                id="inputDescription"
-                label="Description"
-                onChange={undefined}
-                value={undefined}
-                width={8}
-              />
-              <DatePicker
-                allowSameDay={false}
-                dateFormat="L"
-                dateFormatCalendar="MMMM YYYY"
-                disabled={false}
-                disabledKeyboardNavigation={false}
-                dropdownMode="scroll"
-                monthsShown={1}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClickOutside={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onMonthChange={[Function]}
-                onSelect={[Function]}
-                onYearChange={[Function]}
-                placeholderText="Click to select due date"
-                preventOpenOnFocus={false}
-                selected={null}
-                shouldCloseOnSelect={true}
-                showTimeSelect={false}
-                timeCaption="Time"
-                timeIntervals={30}
-                withPortal={false}
-              />
-            </FormGroup>
-            <Button
-              as="button"
-              color="yellow"
-              compact={true}
-              onClick={undefined}
-              size="mini"
-              style={
-                Object {
-                  "marginTop": 10,
-                }
-              }
-              type="submit"
-            >
-              Submit
-            </Button>
-            <Message
-              content="Task name and date are required."
-              error={true}
-              size="mini"
-            />
-          </Form>,
-        ],
-        "raised": true,
-        "style": Object {
-          "backgroundColor": "#f1f5ef",
-        },
-      },
-      "ref": null,
-      "rendered": Array [
+        Submit
+      </Button>
+      <Message
+        content="Task name and date are required."
+        error={true}
+        size="mini"
+      />
+    </Form>
+  </Segment>
+</div>
+`;
+
+exports[`Component: NewTaskInput renders non-error state 1`] = `
+<div>
+  <Segment
+    raised={true}
+    style={
+      Object {
+        "backgroundColor": "#f1f5ef",
+      }
+    }
+  >
+    <Header
+      as="h4"
+      style={
         Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "as": "h4",
-            "children": "Add a task:",
-            "style": Object {
-              "marginBottom": 5,
-            },
-          },
-          "ref": null,
-          "rendered": "Add a task:",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "as": "form",
-            "children": Array [
-              <FormGroup>
-                <FormField
-                  control={[Function]}
-                  id="inputName"
-                  label="Task name"
-                  onChange={undefined}
-                  value={undefined}
-                  width={5}
-                />
-                <FormField
-                  control={[Function]}
-                  id="inputDescription"
-                  label="Description"
-                  onChange={undefined}
-                  value={undefined}
-                  width={8}
-                />
-                <DatePicker
-                  allowSameDay={false}
-                  dateFormat="L"
-                  dateFormatCalendar="MMMM YYYY"
-                  disabled={false}
-                  disabledKeyboardNavigation={false}
-                  dropdownMode="scroll"
-                  monthsShown={1}
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onClickOutside={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onMonthChange={[Function]}
-                  onSelect={[Function]}
-                  onYearChange={[Function]}
-                  placeholderText="Click to select due date"
-                  preventOpenOnFocus={false}
-                  selected={null}
-                  shouldCloseOnSelect={true}
-                  showTimeSelect={false}
-                  timeCaption="Time"
-                  timeIntervals={30}
-                  withPortal={false}
-                />
-              </FormGroup>,
-              <Button
-                as="button"
-                color="yellow"
-                compact={true}
-                onClick={undefined}
-                size="mini"
-                style={
-                  Object {
-                    "marginTop": 10,
-                  }
-                }
-                type="submit"
-              >
-                Submit
-              </Button>,
-              <Message
-                content="Task name and date are required."
-                error={true}
-                size="mini"
-              />,
-            ],
-            "error": true,
-            "size": "tiny",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": Array [
-                  <FormField
-                    control={[Function]}
-                    id="inputName"
-                    label="Task name"
-                    onChange={undefined}
-                    value={undefined}
-                    width={5}
-                  />,
-                  <FormField
-                    control={[Function]}
-                    id="inputDescription"
-                    label="Description"
-                    onChange={undefined}
-                    value={undefined}
-                    width={8}
-                  />,
-                  <DatePicker
-                    allowSameDay={false}
-                    dateFormat="L"
-                    dateFormatCalendar="MMMM YYYY"
-                    disabled={false}
-                    disabledKeyboardNavigation={false}
-                    dropdownMode="scroll"
-                    monthsShown={1}
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onClickOutside={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMonthChange={[Function]}
-                    onSelect={[Function]}
-                    onYearChange={[Function]}
-                    placeholderText="Click to select due date"
-                    preventOpenOnFocus={false}
-                    selected={null}
-                    shouldCloseOnSelect={true}
-                    showTimeSelect={false}
-                    timeCaption="Time"
-                    timeIntervals={30}
-                    withPortal={false}
-                  />,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "control": [Function],
-                    "id": "inputName",
-                    "label": "Task name",
-                    "onChange": undefined,
-                    "value": undefined,
-                    "width": 5,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "control": [Function],
-                    "id": "inputDescription",
-                    "label": "Description",
-                    "onChange": undefined,
-                    "value": undefined,
-                    "width": 8,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "allowSameDay": false,
-                    "dateFormat": "L",
-                    "dateFormatCalendar": "MMMM YYYY",
-                    "disabled": false,
-                    "disabledKeyboardNavigation": false,
-                    "dropdownMode": "scroll",
-                    "monthsShown": 1,
-                    "onBlur": [Function],
-                    "onChange": [Function],
-                    "onClickOutside": [Function],
-                    "onFocus": [Function],
-                    "onKeyDown": [Function],
-                    "onMonthChange": [Function],
-                    "onSelect": [Function],
-                    "onYearChange": [Function],
-                    "placeholderText": "Click to select due date",
-                    "preventOpenOnFocus": false,
-                    "selected": null,
-                    "shouldCloseOnSelect": true,
-                    "showTimeSelect": false,
-                    "timeCaption": "Time",
-                    "timeIntervals": 30,
-                    "withPortal": false,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "as": "button",
-                "children": "Submit",
-                "color": "yellow",
-                "compact": true,
-                "onClick": undefined,
-                "size": "mini",
-                "style": Object {
-                  "marginTop": 10,
-                },
-                "type": "submit",
-              },
-              "ref": null,
-              "rendered": "Submit",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "content": "Task name and date are required.",
-                "error": true,
-                "size": "mini",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
-        },
-      ],
-      "type": [Function],
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <Segment
-          raised={true}
-          style={
-            Object {
-              "backgroundColor": "#f1f5ef",
-            }
+          "marginBottom": 5,
+        }
+      }
+    >
+      Add a task:
+    </Header>
+    <Form
+      as="form"
+      size="tiny"
+    >
+      <FormGroup>
+        <FormField
+          control={[Function]}
+          id="inputName"
+          label="Task name"
+          width={5}
+        />
+        <FormField
+          control={[Function]}
+          id="inputDescription"
+          label="Description"
+          width={8}
+        />
+        <DatePicker
+          allowSameDay={false}
+          dateFormat="L"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={false}
+          disabledKeyboardNavigation={false}
+          dropdownMode="scroll"
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          onYearChange={[Function]}
+          placeholderText="Click to select due date"
+          preventOpenOnFocus={false}
+          selected={null}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          timeCaption="Time"
+          timeIntervals={30}
+          withPortal={false}
+        />
+      </FormGroup>
+      <Button
+        as="button"
+        color="yellow"
+        compact={true}
+        size="mini"
+        style={
+          Object {
+            "marginTop": 10,
           }
-        >
-          <Header
-            as="h4"
-            style={
-              Object {
-                "marginBottom": 5,
-              }
-            }
-          >
-            Add a task:
-          </Header>
-          <Form
-            as="form"
-            error={true}
-            size="tiny"
-          >
-            <FormGroup>
-              <FormField
-                control={[Function]}
-                id="inputName"
-                label="Task name"
-                onChange={undefined}
-                value={undefined}
-                width={5}
-              />
-              <FormField
-                control={[Function]}
-                id="inputDescription"
-                label="Description"
-                onChange={undefined}
-                value={undefined}
-                width={8}
-              />
-              <DatePicker
-                allowSameDay={false}
-                dateFormat="L"
-                dateFormatCalendar="MMMM YYYY"
-                disabled={false}
-                disabledKeyboardNavigation={false}
-                dropdownMode="scroll"
-                monthsShown={1}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClickOutside={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onMonthChange={[Function]}
-                onSelect={[Function]}
-                onYearChange={[Function]}
-                placeholderText="Click to select due date"
-                preventOpenOnFocus={false}
-                selected={null}
-                shouldCloseOnSelect={true}
-                showTimeSelect={false}
-                timeCaption="Time"
-                timeIntervals={30}
-                withPortal={false}
-              />
-            </FormGroup>
-            <Button
-              as="button"
-              color="yellow"
-              compact={true}
-              onClick={undefined}
-              size="mini"
-              style={
-                Object {
-                  "marginTop": 10,
-                }
-              }
-              type="submit"
-            >
-              Submit
-            </Button>
-            <Message
-              content="Task name and date are required."
-              error={true}
-              size="mini"
-            />
-          </Form>
-        </Segment>,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": Array [
-            <Header
-              as="h4"
-              style={
-                Object {
-                  "marginBottom": 5,
-                }
-              }
-            >
-              Add a task:
-            </Header>,
-            <Form
-              as="form"
-              error={true}
-              size="tiny"
-            >
-              <FormGroup>
-                <FormField
-                  control={[Function]}
-                  id="inputName"
-                  label="Task name"
-                  onChange={undefined}
-                  value={undefined}
-                  width={5}
-                />
-                <FormField
-                  control={[Function]}
-                  id="inputDescription"
-                  label="Description"
-                  onChange={undefined}
-                  value={undefined}
-                  width={8}
-                />
-                <DatePicker
-                  allowSameDay={false}
-                  dateFormat="L"
-                  dateFormatCalendar="MMMM YYYY"
-                  disabled={false}
-                  disabledKeyboardNavigation={false}
-                  dropdownMode="scroll"
-                  monthsShown={1}
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onClickOutside={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onMonthChange={[Function]}
-                  onSelect={[Function]}
-                  onYearChange={[Function]}
-                  placeholderText="Click to select due date"
-                  preventOpenOnFocus={false}
-                  selected={null}
-                  shouldCloseOnSelect={true}
-                  showTimeSelect={false}
-                  timeCaption="Time"
-                  timeIntervals={30}
-                  withPortal={false}
-                />
-              </FormGroup>
-              <Button
-                as="button"
-                color="yellow"
-                compact={true}
-                onClick={undefined}
-                size="mini"
-                style={
-                  Object {
-                    "marginTop": 10,
-                  }
-                }
-                type="submit"
-              >
-                Submit
-              </Button>
-              <Message
-                content="Task name and date are required."
-                error={true}
-                size="mini"
-              />
-            </Form>,
-          ],
-          "raised": true,
-          "style": Object {
-            "backgroundColor": "#f1f5ef",
-          },
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "as": "h4",
-              "children": "Add a task:",
-              "style": Object {
-                "marginBottom": 5,
-              },
-            },
-            "ref": null,
-            "rendered": "Add a task:",
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "as": "form",
-              "children": Array [
-                <FormGroup>
-                  <FormField
-                    control={[Function]}
-                    id="inputName"
-                    label="Task name"
-                    onChange={undefined}
-                    value={undefined}
-                    width={5}
-                  />
-                  <FormField
-                    control={[Function]}
-                    id="inputDescription"
-                    label="Description"
-                    onChange={undefined}
-                    value={undefined}
-                    width={8}
-                  />
-                  <DatePicker
-                    allowSameDay={false}
-                    dateFormat="L"
-                    dateFormatCalendar="MMMM YYYY"
-                    disabled={false}
-                    disabledKeyboardNavigation={false}
-                    dropdownMode="scroll"
-                    monthsShown={1}
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onClickOutside={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMonthChange={[Function]}
-                    onSelect={[Function]}
-                    onYearChange={[Function]}
-                    placeholderText="Click to select due date"
-                    preventOpenOnFocus={false}
-                    selected={null}
-                    shouldCloseOnSelect={true}
-                    showTimeSelect={false}
-                    timeCaption="Time"
-                    timeIntervals={30}
-                    withPortal={false}
-                  />
-                </FormGroup>,
-                <Button
-                  as="button"
-                  color="yellow"
-                  compact={true}
-                  onClick={undefined}
-                  size="mini"
-                  style={
-                    Object {
-                      "marginTop": 10,
-                    }
-                  }
-                  type="submit"
-                >
-                  Submit
-                </Button>,
-                <Message
-                  content="Task name and date are required."
-                  error={true}
-                  size="mini"
-                />,
-              ],
-              "error": true,
-              "size": "tiny",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": Array [
-                    <FormField
-                      control={[Function]}
-                      id="inputName"
-                      label="Task name"
-                      onChange={undefined}
-                      value={undefined}
-                      width={5}
-                    />,
-                    <FormField
-                      control={[Function]}
-                      id="inputDescription"
-                      label="Description"
-                      onChange={undefined}
-                      value={undefined}
-                      width={8}
-                    />,
-                    <DatePicker
-                      allowSameDay={false}
-                      dateFormat="L"
-                      dateFormatCalendar="MMMM YYYY"
-                      disabled={false}
-                      disabledKeyboardNavigation={false}
-                      dropdownMode="scroll"
-                      monthsShown={1}
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onClickOutside={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      onMonthChange={[Function]}
-                      onSelect={[Function]}
-                      onYearChange={[Function]}
-                      placeholderText="Click to select due date"
-                      preventOpenOnFocus={false}
-                      selected={null}
-                      shouldCloseOnSelect={true}
-                      showTimeSelect={false}
-                      timeCaption="Time"
-                      timeIntervals={30}
-                      withPortal={false}
-                    />,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "control": [Function],
-                      "id": "inputName",
-                      "label": "Task name",
-                      "onChange": undefined,
-                      "value": undefined,
-                      "width": 5,
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "control": [Function],
-                      "id": "inputDescription",
-                      "label": "Description",
-                      "onChange": undefined,
-                      "value": undefined,
-                      "width": 8,
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "allowSameDay": false,
-                      "dateFormat": "L",
-                      "dateFormatCalendar": "MMMM YYYY",
-                      "disabled": false,
-                      "disabledKeyboardNavigation": false,
-                      "dropdownMode": "scroll",
-                      "monthsShown": 1,
-                      "onBlur": [Function],
-                      "onChange": [Function],
-                      "onClickOutside": [Function],
-                      "onFocus": [Function],
-                      "onKeyDown": [Function],
-                      "onMonthChange": [Function],
-                      "onSelect": [Function],
-                      "onYearChange": [Function],
-                      "placeholderText": "Click to select due date",
-                      "preventOpenOnFocus": false,
-                      "selected": null,
-                      "shouldCloseOnSelect": true,
-                      "showTimeSelect": false,
-                      "timeCaption": "Time",
-                      "timeIntervals": 30,
-                      "withPortal": false,
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "as": "button",
-                  "children": "Submit",
-                  "color": "yellow",
-                  "compact": true,
-                  "onClick": undefined,
-                  "size": "mini",
-                  "style": Object {
-                    "marginTop": 10,
-                  },
-                  "type": "submit",
-                },
-                "ref": null,
-                "rendered": "Submit",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "content": "Task name and date are required.",
-                  "error": true,
-                  "size": "mini",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
+        }
+        type="submit"
+      >
+        Submit
+      </Button>
+      <Message
+        content="Task name and date are required."
+        error={true}
+        size="mini"
+      />
+    </Form>
+  </Segment>
+</div>
 `;
 
 exports[`Component: Task renders as completed 1`] = `
-<div
-  className="ui basic segment"
+<Segment
+  basic={true}
   style={
     Object {
       "margin": 0,
     }
   }
 >
-  <div
-    className="ui card"
-    href={undefined}
-    onClick={[Function]}
-  >
-    <div
-      className="content"
+  <Card>
+    <CardContent
       style={
         Object {
           "paddingBottom": 7,
         }
       }
     >
-      <div
-        className="header"
-      >
+      <CardHeader>
         Drive Bob to airport
-      </div>
-      <div
-        className="content"
-      >
+      </CardHeader>
+      <CardContent>
         Laguardia, at 5am
-      </div>
-      <div
-        className="meta"
-      >
+      </CardContent>
+      <CardMeta>
         Due Today
-      </div>
-    </div>
-    <div
-      className="ui buttons"
+      </CardMeta>
+    </CardContent>
+    <ButtonGroup
       style={
         Object {
           "border": "1px solid #d4d4d5",
         }
       }
     >
-      <button
-        className="ui mini compact button"
-        disabled={undefined}
-        id={undefined}
-        onClick={[Function]}
-        role="button"
+      <Button
+        as="button"
+        compact={true}
+        size="mini"
         style={
           Object {
             "backgroundColor": "white",
@@ -2112,108 +1369,17 @@ exports[`Component: Task renders as completed 1`] = `
             "padding": 8,
           }
         }
-        tabIndex={undefined}
       >
-        <i
-          aria-hidden="true"
-          className="red trash icon"
+        <Icon
+          as="i"
+          color="red"
+          name="trash"
         />
          delete
-      </button>
-    </div>
-  </div>
-</div>
+      </Button>
+    </ButtonGroup>
+  </Card>
+</Segment>
 `;
 
-exports[`Component: TaskList renders task 1`] = `
-<div
-  className="ui basic segment"
-  style={
-    Object {
-      "margin": 0,
-    }
-  }
->
-  <div
-    className="ui card"
-    href={undefined}
-    onClick={[Function]}
-  >
-    <div
-      className="content"
-      style={
-        Object {
-          "paddingBottom": 7,
-        }
-      }
-    >
-      <div
-        className="header"
-      >
-        Pick up dry cleaning
-      </div>
-      <div
-        className="content"
-      >
-        456 Gold St.
-      </div>
-      <div
-        className="meta"
-      >
-        Due Today
-      </div>
-    </div>
-    <div
-      className="ui buttons"
-      style={
-        Object {
-          "border": "1px solid #d4d4d5",
-        }
-      }
-    >
-      <button
-        className="ui mini compact button"
-        disabled={undefined}
-        id={undefined}
-        onClick={[Function]}
-        role="button"
-        style={
-          Object {
-            "backgroundColor": "white",
-            "margin": 1,
-            "padding": 8,
-          }
-        }
-        tabIndex={undefined}
-      >
-        <i
-          aria-hidden="true"
-          className="green check circle icon"
-        />
-         done
-      </button>
-      <button
-        className="ui mini compact button"
-        disabled={undefined}
-        id={undefined}
-        onClick={[Function]}
-        role="button"
-        style={
-          Object {
-            "backgroundColor": "white",
-            "margin": 1,
-            "padding": 8,
-          }
-        }
-        tabIndex={undefined}
-      >
-        <i
-          aria-hidden="true"
-          className="red trash icon"
-        />
-         delete
-      </button>
-    </div>
-  </div>
-</div>
-`;
+exports[`Component: TaskList renders default view 1`] = `""`;
