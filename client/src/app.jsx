@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import moment from 'moment';
 import axios from 'axios';
 import { Segment, Card } from 'semantic-ui-react';
@@ -25,7 +24,7 @@ const convertToMomentDate = (tasksArray) => {
   });
 };
 
-class App extends React.Component{
+export class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
@@ -196,5 +195,3 @@ class App extends React.Component{
     );
   };
 };
-
-ReactDOM.render(<App/>, document.getElementById('app'));

@@ -1,0 +1,1385 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App functionality: should add task based on input values 1`] = `
+<App>
+  <div
+    style={
+      Object {
+        "margin": "40px auto",
+        "maxWidth": 900,
+      }
+    }
+  >
+    <Segment
+      raised={true}
+      style={
+        Object {
+          "backgroundColor": "rgba(243, 240, 240, 0.75)",
+        }
+      }
+    >
+      <div
+        className="ui raised segment"
+        style={
+          Object {
+            "backgroundColor": "rgba(243, 240, 240, 0.75)",
+          }
+        }
+      >
+        <CardGroup
+          itemsPerRow={3}
+        >
+          <div
+            className="ui three cards"
+          >
+            <Card
+              color="grey"
+            >
+              <div
+                className="ui grey card"
+                onClick={[Function]}
+              >
+                <CardContent
+                  textAlign="center"
+                >
+                  <div
+                    className="center aligned content"
+                  >
+                    <h1>
+                      My Tasks
+                    </h1>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+          </div>
+        </CardGroup>
+        <br />
+        <NewTaskInput
+          changeDate={[Function]}
+          formError={false}
+          handleChange={[Function]}
+          inputDate={null}
+          inputDescription=""
+          inputName=""
+          submitTask={[Function]}
+        >
+          <div>
+            <Segment
+              raised={true}
+              style={
+                Object {
+                  "backgroundColor": "#f1f5ef",
+                }
+              }
+            >
+              <div
+                className="ui raised segment"
+                style={
+                  Object {
+                    "backgroundColor": "#f1f5ef",
+                  }
+                }
+              >
+                <Header
+                  as="h4"
+                  style={
+                    Object {
+                      "marginBottom": 5,
+                    }
+                  }
+                >
+                  <h4
+                    className="ui header"
+                    style={
+                      Object {
+                        "marginBottom": 5,
+                      }
+                    }
+                  >
+                    Add a task:
+                  </h4>
+                </Header>
+                <Form
+                  as="form"
+                  error={false}
+                  size="tiny"
+                >
+                  <form
+                    className="ui tiny form"
+                    onSubmit={[Function]}
+                  >
+                    <FormGroup>
+                      <div
+                        className="fields"
+                      >
+                        <FormField
+                          control={[Function]}
+                          id="inputName"
+                          label="Task name"
+                          onChange={[Function]}
+                          value=""
+                          width={5}
+                        >
+                          <div
+                            className="five wide field"
+                          >
+                            <label
+                              htmlFor="inputName"
+                              key="Task name"
+                            >
+                              Task name
+                            </label>
+                            <Input
+                              id="inputName"
+                              onChange={[Function]}
+                              type="text"
+                              value=""
+                            >
+                              <div
+                                className="ui input"
+                              >
+                                <input
+                                  id="inputName"
+                                  key="text"
+                                  onChange={[Function]}
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </Input>
+                          </div>
+                        </FormField>
+                        <FormField
+                          control={[Function]}
+                          id="inputDescription"
+                          label="Description"
+                          onChange={[Function]}
+                          value=""
+                          width={8}
+                        >
+                          <div
+                            className="eight wide field"
+                          >
+                            <label
+                              htmlFor="inputDescription"
+                              key="Description"
+                            >
+                              Description
+                            </label>
+                            <Input
+                              id="inputDescription"
+                              onChange={[Function]}
+                              type="text"
+                              value=""
+                            >
+                              <div
+                                className="ui input"
+                              >
+                                <input
+                                  id="inputDescription"
+                                  key="text"
+                                  onChange={[Function]}
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </Input>
+                          </div>
+                        </FormField>
+                        <DatePicker
+                          allowSameDay={false}
+                          dateFormat="L"
+                          dateFormatCalendar="MMMM YYYY"
+                          disabled={false}
+                          disabledKeyboardNavigation={false}
+                          dropdownMode="scroll"
+                          monthsShown={1}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onClickOutside={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onMonthChange={[Function]}
+                          onSelect={[Function]}
+                          onYearChange={[Function]}
+                          placeholderText="Click to select due date"
+                          preventOpenOnFocus={false}
+                          selected={null}
+                          shouldCloseOnSelect={true}
+                          showTimeSelect={false}
+                          timeCaption="Time"
+                          timeIntervals={30}
+                          withPortal={false}
+                        >
+                          <PopperComponent
+                            hidePopper={true}
+                            popperComponent={null}
+                            popperModifiers={
+                              Object {
+                                "preventOverflow": Object {
+                                  "boundariesElement": "viewport",
+                                  "enabled": true,
+                                  "escapeWithReference": true,
+                                },
+                              }
+                            }
+                            popperPlacement="bottom-start"
+                            targetComponent={
+                              <div
+                                className="react-datepicker__input-container"
+                              >
+                                <input
+                                  autoComplete={undefined}
+                                  autoFocus={undefined}
+                                  className=""
+                                  disabled={false}
+                                  id={undefined}
+                                  name={undefined}
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onClick={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  placeholder="Click to select due date"
+                                  readOnly={undefined}
+                                  required={undefined}
+                                  tabIndex={undefined}
+                                  title={undefined}
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            }
+                          >
+                            <Manager
+                              tag="div"
+                            >
+                              <div>
+                                <Target
+                                  className="react-datepicker-wrapper"
+                                >
+                                  <div
+                                    className="react-datepicker-wrapper"
+                                  >
+                                    <div
+                                      className="react-datepicker__input-container"
+                                    >
+                                      <input
+                                        className=""
+                                        disabled={false}
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onClick={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        placeholder="Click to select due date"
+                                        type="text"
+                                        value=""
+                                      />
+                                    </div>
+                                  </div>
+                                </Target>
+                              </div>
+                            </Manager>
+                          </PopperComponent>
+                        </DatePicker>
+                      </div>
+                    </FormGroup>
+                    <Button
+                      as="button"
+                      color="yellow"
+                      compact={true}
+                      onClick={[Function]}
+                      size="mini"
+                      style={
+                        Object {
+                          "marginTop": 10,
+                        }
+                      }
+                      type="submit"
+                    >
+                      <button
+                        className="ui yellow mini compact button"
+                        onClick={[Function]}
+                        role="button"
+                        style={
+                          Object {
+                            "marginTop": 10,
+                          }
+                        }
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </Button>
+                    <Message
+                      content="Task name and date are required."
+                      error={true}
+                      size="mini"
+                    >
+                      <div
+                        className="ui mini error message"
+                      >
+                        <MessageContent>
+                          <div
+                            className="content"
+                          >
+                            <p
+                              key="Task name and date are required."
+                            >
+                              Task name and date are required.
+                            </p>
+                          </div>
+                        </MessageContent>
+                      </div>
+                    </Message>
+                  </form>
+                </Form>
+              </div>
+            </Segment>
+          </div>
+        </NewTaskInput>
+        <br />
+        <TaskViewNavigation
+          completeTask={[Function]}
+          deleteTask={[Function]}
+          handleItemClick={[Function]}
+          isDueSoon={[Function]}
+          isOverdue={[Function]}
+          tasks={Array []}
+          view="All Incomplete"
+        >
+          <Segment
+            style={
+              Object {
+                "minHeight": 330,
+              }
+            }
+          >
+            <div
+              className="ui segment"
+              style={
+                Object {
+                  "minHeight": 330,
+                }
+              }
+            >
+              <Grid>
+                <div
+                  className="ui grid"
+                >
+                  <GridColumn
+                    width={5}
+                  >
+                    <div
+                      className="five wide column"
+                    >
+                      <Menu
+                        fluid={true}
+                        tabular={true}
+                        vertical={true}
+                      >
+                        <div
+                          className="ui fluid vertical tabular menu"
+                        >
+                          <MenuItem
+                            active={true}
+                            name="All Incomplete"
+                            onClick={[Function]}
+                          >
+                            <a
+                              className="active item"
+                              onClick={[Function]}
+                            >
+                              All Incomplete
+                            </a>
+                          </MenuItem>
+                          <MenuItem
+                            active={false}
+                            name="Due Today Or Tomorrow"
+                            onClick={[Function]}
+                          >
+                            <a
+                              className="item"
+                              onClick={[Function]}
+                            >
+                              Due Today Or Tomorrow
+                            </a>
+                          </MenuItem>
+                          <MenuItem
+                            active={false}
+                            name="Overdue"
+                            onClick={[Function]}
+                          >
+                            <a
+                              className="item"
+                              onClick={[Function]}
+                            >
+                              Overdue
+                            </a>
+                          </MenuItem>
+                          <MenuItem
+                            active={false}
+                            name="Completed"
+                            onClick={[Function]}
+                          >
+                            <a
+                              className="item"
+                              onClick={[Function]}
+                            >
+                              Completed
+                            </a>
+                          </MenuItem>
+                        </div>
+                      </Menu>
+                    </div>
+                  </GridColumn>
+                  <GridColumn
+                    stretched={true}
+                    width={11}
+                  >
+                    <div
+                      className="stretched eleven wide column"
+                    >
+                      <TaskList
+                        completeTask={[Function]}
+                        deleteTask={[Function]}
+                        handleItemClick={[Function]}
+                        isDueSoon={[Function]}
+                        isOverdue={[Function]}
+                        tasks={Array []}
+                        view="All Incomplete"
+                      />
+                    </div>
+                  </GridColumn>
+                </div>
+              </Grid>
+            </div>
+          </Segment>
+        </TaskViewNavigation>
+      </div>
+    </Segment>
+  </div>
+</App>
+`;
+
+exports[`App functionality: should pass value to the handleChange function 1`] = `
+<App>
+  <div
+    style={
+      Object {
+        "margin": "40px auto",
+        "maxWidth": 900,
+      }
+    }
+  >
+    <Segment
+      raised={true}
+      style={
+        Object {
+          "backgroundColor": "rgba(243, 240, 240, 0.75)",
+        }
+      }
+    >
+      <div
+        className="ui raised segment"
+        style={
+          Object {
+            "backgroundColor": "rgba(243, 240, 240, 0.75)",
+          }
+        }
+      >
+        <CardGroup
+          itemsPerRow={3}
+        >
+          <div
+            className="ui three cards"
+          >
+            <Card
+              color="grey"
+            >
+              <div
+                className="ui grey card"
+                onClick={[Function]}
+              >
+                <CardContent
+                  textAlign="center"
+                >
+                  <div
+                    className="center aligned content"
+                  >
+                    <h1>
+                      My Tasks
+                    </h1>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+          </div>
+        </CardGroup>
+        <br />
+        <NewTaskInput
+          changeDate={[Function]}
+          formError={false}
+          handleChange={[Function]}
+          inputDate={null}
+          inputDescription=""
+          inputName=""
+          submitTask={[Function]}
+        >
+          <div>
+            <Segment
+              raised={true}
+              style={
+                Object {
+                  "backgroundColor": "#f1f5ef",
+                }
+              }
+            >
+              <div
+                className="ui raised segment"
+                style={
+                  Object {
+                    "backgroundColor": "#f1f5ef",
+                  }
+                }
+              >
+                <Header
+                  as="h4"
+                  style={
+                    Object {
+                      "marginBottom": 5,
+                    }
+                  }
+                >
+                  <h4
+                    className="ui header"
+                    style={
+                      Object {
+                        "marginBottom": 5,
+                      }
+                    }
+                  >
+                    Add a task:
+                  </h4>
+                </Header>
+                <Form
+                  as="form"
+                  error={false}
+                  size="tiny"
+                >
+                  <form
+                    className="ui tiny form"
+                    onSubmit={[Function]}
+                  >
+                    <FormGroup>
+                      <div
+                        className="fields"
+                      >
+                        <FormField
+                          control={[Function]}
+                          id="inputName"
+                          label="Task name"
+                          onChange={[Function]}
+                          value=""
+                          width={5}
+                        >
+                          <div
+                            className="five wide field"
+                          >
+                            <label
+                              htmlFor="inputName"
+                              key="Task name"
+                            >
+                              Task name
+                            </label>
+                            <Input
+                              id="inputName"
+                              onChange={[Function]}
+                              type="text"
+                              value=""
+                            >
+                              <div
+                                className="ui input"
+                              >
+                                <input
+                                  id="inputName"
+                                  key="text"
+                                  onChange={[Function]}
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </Input>
+                          </div>
+                        </FormField>
+                        <FormField
+                          control={[Function]}
+                          id="inputDescription"
+                          label="Description"
+                          onChange={[Function]}
+                          value=""
+                          width={8}
+                        >
+                          <div
+                            className="eight wide field"
+                          >
+                            <label
+                              htmlFor="inputDescription"
+                              key="Description"
+                            >
+                              Description
+                            </label>
+                            <Input
+                              id="inputDescription"
+                              onChange={[Function]}
+                              type="text"
+                              value=""
+                            >
+                              <div
+                                className="ui input"
+                              >
+                                <input
+                                  id="inputDescription"
+                                  key="text"
+                                  onChange={[Function]}
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </Input>
+                          </div>
+                        </FormField>
+                        <DatePicker
+                          allowSameDay={false}
+                          dateFormat="L"
+                          dateFormatCalendar="MMMM YYYY"
+                          disabled={false}
+                          disabledKeyboardNavigation={false}
+                          dropdownMode="scroll"
+                          monthsShown={1}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onClickOutside={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onMonthChange={[Function]}
+                          onSelect={[Function]}
+                          onYearChange={[Function]}
+                          placeholderText="Click to select due date"
+                          preventOpenOnFocus={false}
+                          selected={null}
+                          shouldCloseOnSelect={true}
+                          showTimeSelect={false}
+                          timeCaption="Time"
+                          timeIntervals={30}
+                          withPortal={false}
+                        >
+                          <PopperComponent
+                            hidePopper={true}
+                            popperComponent={null}
+                            popperModifiers={
+                              Object {
+                                "preventOverflow": Object {
+                                  "boundariesElement": "viewport",
+                                  "enabled": true,
+                                  "escapeWithReference": true,
+                                },
+                              }
+                            }
+                            popperPlacement="bottom-start"
+                            targetComponent={
+                              <div
+                                className="react-datepicker__input-container"
+                              >
+                                <input
+                                  autoComplete={undefined}
+                                  autoFocus={undefined}
+                                  className=""
+                                  disabled={false}
+                                  id={undefined}
+                                  name={undefined}
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  onClick={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  placeholder="Click to select due date"
+                                  readOnly={undefined}
+                                  required={undefined}
+                                  tabIndex={undefined}
+                                  title={undefined}
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            }
+                          >
+                            <Manager
+                              tag="div"
+                            >
+                              <div>
+                                <Target
+                                  className="react-datepicker-wrapper"
+                                >
+                                  <div
+                                    className="react-datepicker-wrapper"
+                                  >
+                                    <div
+                                      className="react-datepicker__input-container"
+                                    >
+                                      <input
+                                        className=""
+                                        disabled={false}
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onClick={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        placeholder="Click to select due date"
+                                        type="text"
+                                        value=""
+                                      />
+                                    </div>
+                                  </div>
+                                </Target>
+                              </div>
+                            </Manager>
+                          </PopperComponent>
+                        </DatePicker>
+                      </div>
+                    </FormGroup>
+                    <Button
+                      as="button"
+                      color="yellow"
+                      compact={true}
+                      onClick={[Function]}
+                      size="mini"
+                      style={
+                        Object {
+                          "marginTop": 10,
+                        }
+                      }
+                      type="submit"
+                    >
+                      <button
+                        className="ui yellow mini compact button"
+                        onClick={[Function]}
+                        role="button"
+                        style={
+                          Object {
+                            "marginTop": 10,
+                          }
+                        }
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </Button>
+                    <Message
+                      content="Task name and date are required."
+                      error={true}
+                      size="mini"
+                    >
+                      <div
+                        className="ui mini error message"
+                      >
+                        <MessageContent>
+                          <div
+                            className="content"
+                          >
+                            <p
+                              key="Task name and date are required."
+                            >
+                              Task name and date are required.
+                            </p>
+                          </div>
+                        </MessageContent>
+                      </div>
+                    </Message>
+                  </form>
+                </Form>
+              </div>
+            </Segment>
+          </div>
+        </NewTaskInput>
+        <br />
+        <TaskViewNavigation
+          completeTask={[Function]}
+          deleteTask={[Function]}
+          handleItemClick={[Function]}
+          isDueSoon={[Function]}
+          isOverdue={[Function]}
+          tasks={Array []}
+          view="All Incomplete"
+        >
+          <Segment
+            style={
+              Object {
+                "minHeight": 330,
+              }
+            }
+          >
+            <div
+              className="ui segment"
+              style={
+                Object {
+                  "minHeight": 330,
+                }
+              }
+            >
+              <Grid>
+                <div
+                  className="ui grid"
+                >
+                  <GridColumn
+                    width={5}
+                  >
+                    <div
+                      className="five wide column"
+                    >
+                      <Menu
+                        fluid={true}
+                        tabular={true}
+                        vertical={true}
+                      >
+                        <div
+                          className="ui fluid vertical tabular menu"
+                        >
+                          <MenuItem
+                            active={true}
+                            name="All Incomplete"
+                            onClick={[Function]}
+                          >
+                            <a
+                              className="active item"
+                              onClick={[Function]}
+                            >
+                              All Incomplete
+                            </a>
+                          </MenuItem>
+                          <MenuItem
+                            active={false}
+                            name="Due Today Or Tomorrow"
+                            onClick={[Function]}
+                          >
+                            <a
+                              className="item"
+                              onClick={[Function]}
+                            >
+                              Due Today Or Tomorrow
+                            </a>
+                          </MenuItem>
+                          <MenuItem
+                            active={false}
+                            name="Overdue"
+                            onClick={[Function]}
+                          >
+                            <a
+                              className="item"
+                              onClick={[Function]}
+                            >
+                              Overdue
+                            </a>
+                          </MenuItem>
+                          <MenuItem
+                            active={false}
+                            name="Completed"
+                            onClick={[Function]}
+                          >
+                            <a
+                              className="item"
+                              onClick={[Function]}
+                            >
+                              Completed
+                            </a>
+                          </MenuItem>
+                        </div>
+                      </Menu>
+                    </div>
+                  </GridColumn>
+                  <GridColumn
+                    stretched={true}
+                    width={11}
+                  >
+                    <div
+                      className="stretched eleven wide column"
+                    >
+                      <TaskList
+                        completeTask={[Function]}
+                        deleteTask={[Function]}
+                        handleItemClick={[Function]}
+                        isDueSoon={[Function]}
+                        isOverdue={[Function]}
+                        tasks={Array []}
+                        view="All Incomplete"
+                      />
+                    </div>
+                  </GridColumn>
+                </div>
+              </Grid>
+            </div>
+          </Segment>
+        </TaskViewNavigation>
+      </div>
+    </Segment>
+  </div>
+</App>
+`;
+
+exports[`Component: App renders a snapshot 1`] = `
+<div
+  style={
+    Object {
+      "margin": "40px auto",
+      "maxWidth": 900,
+    }
+  }
+>
+  <div
+    className="ui raised segment"
+    style={
+      Object {
+        "backgroundColor": "rgba(243, 240, 240, 0.75)",
+      }
+    }
+  >
+    <div
+      className="ui three cards"
+    >
+      <div
+        className="ui grey card"
+        href={undefined}
+        onClick={[Function]}
+      >
+        <div
+          className="center aligned content"
+        >
+          <h1>
+            My Tasks
+          </h1>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div>
+      <div
+        className="ui raised segment"
+        style={
+          Object {
+            "backgroundColor": "#f1f5ef",
+          }
+        }
+      >
+        <h4
+          className="ui header"
+          style={
+            Object {
+              "marginBottom": 5,
+            }
+          }
+        >
+          Add a task:
+        </h4>
+        <form
+          action={undefined}
+          className="ui tiny form"
+          onSubmit={[Function]}
+        >
+          <div
+            className="fields"
+          >
+            <div
+              className="five wide field"
+            >
+              <label
+                htmlFor="inputName"
+              >
+                Task name
+              </label>
+              <div
+                className="ui input"
+                content={undefined}
+              >
+                <input
+                  disabled={undefined}
+                  id="inputName"
+                  onChange={[Function]}
+                  required={undefined}
+                  tabIndex={undefined}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              className="eight wide field"
+            >
+              <label
+                htmlFor="inputDescription"
+              >
+                Description
+              </label>
+              <div
+                className="ui input"
+                content={undefined}
+              >
+                <input
+                  disabled={undefined}
+                  id="inputDescription"
+                  onChange={[Function]}
+                  required={undefined}
+                  tabIndex={undefined}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div>
+              <div
+                className="react-datepicker-wrapper"
+              >
+                <div
+                  className="react-datepicker__input-container"
+                >
+                  <input
+                    autoComplete={undefined}
+                    autoFocus={undefined}
+                    className=""
+                    disabled={false}
+                    id={undefined}
+                    name={undefined}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Click to select due date"
+                    readOnly={undefined}
+                    required={undefined}
+                    tabIndex={undefined}
+                    title={undefined}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            className="ui yellow mini compact button"
+            disabled={undefined}
+            onClick={[Function]}
+            role="button"
+            style={
+              Object {
+                "marginTop": 10,
+              }
+            }
+            tabIndex={undefined}
+            type="submit"
+          >
+            Submit
+          </button>
+          <div
+            className="ui mini error message"
+          >
+            <div
+              className="content"
+            >
+              <p>
+                Task name and date are required.
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div
+      className="ui segment"
+      style={
+        Object {
+          "minHeight": 330,
+        }
+      }
+    >
+      <div
+        className="ui grid"
+      >
+        <div
+          className="five wide column"
+        >
+          <div
+            className="ui fluid vertical tabular menu"
+          >
+            <a
+              className="active item"
+              onClick={[Function]}
+            >
+              All Incomplete
+            </a>
+            <a
+              className="item"
+              onClick={[Function]}
+            >
+              Due Today Or Tomorrow
+            </a>
+            <a
+              className="item"
+              onClick={[Function]}
+            >
+              Overdue
+            </a>
+            <a
+              className="item"
+              onClick={[Function]}
+            >
+              Completed
+            </a>
+          </div>
+        </div>
+        <div
+          className="stretched eleven wide column"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Component: NewTaskInput renders error state 1`] = `
+<div>
+  <Segment
+    raised={true}
+    style={
+      Object {
+        "backgroundColor": "#f1f5ef",
+      }
+    }
+  >
+    <Header
+      as="h4"
+      style={
+        Object {
+          "marginBottom": 5,
+        }
+      }
+    >
+      Add a task:
+    </Header>
+    <Form
+      as="form"
+      error={true}
+      size="tiny"
+    >
+      <FormGroup>
+        <FormField
+          control={[Function]}
+          id="inputName"
+          label="Task name"
+          width={5}
+        />
+        <FormField
+          control={[Function]}
+          id="inputDescription"
+          label="Description"
+          width={8}
+        />
+        <DatePicker
+          allowSameDay={false}
+          dateFormat="L"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={false}
+          disabledKeyboardNavigation={false}
+          dropdownMode="scroll"
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          onYearChange={[Function]}
+          placeholderText="Click to select due date"
+          preventOpenOnFocus={false}
+          selected={null}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          timeCaption="Time"
+          timeIntervals={30}
+          withPortal={false}
+        />
+      </FormGroup>
+      <Button
+        as="button"
+        color="yellow"
+        compact={true}
+        size="mini"
+        style={
+          Object {
+            "marginTop": 10,
+          }
+        }
+        type="submit"
+      >
+        Submit
+      </Button>
+      <Message
+        content="Task name and date are required."
+        error={true}
+        size="mini"
+      />
+    </Form>
+  </Segment>
+</div>
+`;
+
+exports[`Component: NewTaskInput renders non-error state 1`] = `
+<div>
+  <Segment
+    raised={true}
+    style={
+      Object {
+        "backgroundColor": "#f1f5ef",
+      }
+    }
+  >
+    <Header
+      as="h4"
+      style={
+        Object {
+          "marginBottom": 5,
+        }
+      }
+    >
+      Add a task:
+    </Header>
+    <Form
+      as="form"
+      size="tiny"
+    >
+      <FormGroup>
+        <FormField
+          control={[Function]}
+          id="inputName"
+          label="Task name"
+          width={5}
+        />
+        <FormField
+          control={[Function]}
+          id="inputDescription"
+          label="Description"
+          width={8}
+        />
+        <DatePicker
+          allowSameDay={false}
+          dateFormat="L"
+          dateFormatCalendar="MMMM YYYY"
+          disabled={false}
+          disabledKeyboardNavigation={false}
+          dropdownMode="scroll"
+          monthsShown={1}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClickOutside={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMonthChange={[Function]}
+          onSelect={[Function]}
+          onYearChange={[Function]}
+          placeholderText="Click to select due date"
+          preventOpenOnFocus={false}
+          selected={null}
+          shouldCloseOnSelect={true}
+          showTimeSelect={false}
+          timeCaption="Time"
+          timeIntervals={30}
+          withPortal={false}
+        />
+      </FormGroup>
+      <Button
+        as="button"
+        color="yellow"
+        compact={true}
+        size="mini"
+        style={
+          Object {
+            "marginTop": 10,
+          }
+        }
+        type="submit"
+      >
+        Submit
+      </Button>
+      <Message
+        content="Task name and date are required."
+        error={true}
+        size="mini"
+      />
+    </Form>
+  </Segment>
+</div>
+`;
+
+exports[`Component: Task renders as completed 1`] = `
+<Segment
+  basic={true}
+  style={
+    Object {
+      "margin": 0,
+    }
+  }
+>
+  <Card>
+    <CardContent
+      style={
+        Object {
+          "paddingBottom": 7,
+        }
+      }
+    >
+      <CardHeader>
+        Drive Bob to airport
+      </CardHeader>
+      <CardContent>
+        Laguardia, at 5am
+      </CardContent>
+      <CardMeta>
+        Due Today
+      </CardMeta>
+    </CardContent>
+    <ButtonGroup
+      style={
+        Object {
+          "border": "1px solid #d4d4d5",
+        }
+      }
+    >
+      <Button
+        as="button"
+        compact={true}
+        size="mini"
+        style={
+          Object {
+            "backgroundColor": "white",
+            "margin": 1,
+            "padding": 8,
+          }
+        }
+      >
+        <Icon
+          as="i"
+          color="red"
+          name="trash"
+        />
+         delete
+      </Button>
+    </ButtonGroup>
+  </Card>
+</Segment>
+`;
+
+exports[`Component: TaskList renders default view 1`] = `""`;
