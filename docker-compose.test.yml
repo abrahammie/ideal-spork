@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+
+  sut:
+    build: .
+    links:
+      - web
+      # - tasks
+
+  web:
+    container_name: web
+    build: ./client
+
+    ports:
+      - "8080:80"
+    volumes:
+      - ./client/.babelrc:/app/.babelrc
+      - ./client/dist:/app/dist
+      - ./client/src:/app/src
+      - ./client/package.json:/app/package.json
+      - ./client/webpack.config.js:/app/webpack.config.js
+    # depends_on:
+    #   - tasks
+    # links:
+    #   - tasks
+
+  # tasks:
+  #   container_name: tasks
+  #   restart: always
+  #   build: ./tasks
+  #   ports:
+  #     - "3001:3001"
+  #   volumes:
+  #     - ./tasks:/usr/src/app
+  #     - /app/node_modules
+  #   depends_on:
+  #     - mongo
+  #   command: ["npm", "test"]
+
+  # mongo:
+  #   container_name: mongo
+  #   image: mongo
+  #   ports:
+  #     - "27017:27017"
