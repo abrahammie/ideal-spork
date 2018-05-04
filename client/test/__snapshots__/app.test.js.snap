@@ -297,7 +297,6 @@ exports[`App functionality: should add task based on input values 1`] = `
                           "marginTop": 10,
                         }
                       }
-                      type="submit"
                     >
                       <button
                         className="ui yellow mini compact button"
@@ -308,7 +307,6 @@ exports[`App functionality: should add task based on input values 1`] = `
                             "marginTop": 10,
                           }
                         }
-                        type="submit"
                       >
                         Submit
                       </button>
@@ -761,7 +759,6 @@ exports[`App functionality: should pass value to the handleChange function 1`] =
                           "marginTop": 10,
                         }
                       }
-                      type="submit"
                     >
                       <button
                         className="ui yellow mini compact button"
@@ -772,7 +769,6 @@ exports[`App functionality: should pass value to the handleChange function 1`] =
                             "marginTop": 10,
                           }
                         }
-                        type="submit"
                       >
                         Submit
                       </button>
@@ -1078,7 +1074,6 @@ exports[`Component: App renders a snapshot 1`] = `
               }
             }
             tabIndex={undefined}
-            type="submit"
           >
             Submit
           </button>
@@ -1223,7 +1218,6 @@ exports[`Component: NewTaskInput renders error state 1`] = `
             "marginTop": 10,
           }
         }
-        type="submit"
       >
         Submit
       </Button>
@@ -1310,7 +1304,6 @@ exports[`Component: NewTaskInput renders non-error state 1`] = `
             "marginTop": 10,
           }
         }
-        type="submit"
       >
         Submit
       </Button>
