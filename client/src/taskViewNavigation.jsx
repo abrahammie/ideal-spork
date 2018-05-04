@@ -9,7 +9,11 @@ const style = {
 };
 
 export const TaskViewNavigation = (props) => {
-  const { handleItemClick, view } = props;
+  const {
+    handleItemClick,
+    view,
+  } = props;
+
   return (
     <Segment
       style={style.segment}>

@@ -1,4 +1,4 @@
-# Build the bundle
+# Build the bundle and copy files
 FROM node:carbon as builder
 COPY package.json /app/package.json
 WORKDIR /app/

@@ -1327,13 +1327,7 @@ exports[`Component: Task renders as completed 1`] = `
   }
 >
   <Card>
-    <CardContent
-      style={
-        Object {
-          "paddingBottom": 7,
-        }
-      }
-    >
+    <CardContent>
       <CardHeader>
         Drive Bob to airport
       </CardHeader>

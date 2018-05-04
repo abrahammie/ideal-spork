@@ -19,7 +19,14 @@ const style = {
 };
 
 export const Alert = (props) => {
-  const { label, num, when, handleItemClick, icon } = props;
+  const {
+    label,
+    num,
+    when,
+    handleItemClick,
+    icon,
+  } = props;
+
   return (
     <Card
       style={style.card}
