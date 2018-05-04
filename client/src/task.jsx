@@ -27,7 +27,17 @@ const style = {
 };
 
 export const Task = props => {
-  const { name, description, date, _id, completed, deleteTask, completeTask, taskStyle } = props;
+  const {
+    name,
+    description,
+    date,
+    _id,
+    completed,
+    deleteTask,
+    completeTask,
+    taskStyle,
+  } = props;
+
   return (
     <Segment
       basic
@@ -77,3 +87,5 @@ export const Task = props => {
     </Segment>
   );
 };
+
+

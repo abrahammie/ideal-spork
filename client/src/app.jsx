@@ -44,7 +44,7 @@ export class App extends React.Component{
   };
 
   componentWillMount() {
-    // get tasks from api on mount
+    // get tasks from tasks api on mount
     axios.get(
       `http://${document.location.hostname}:3001/api/getTasks`)
       .then(res => {
@@ -56,7 +56,7 @@ export class App extends React.Component{
 
   submitTask() {
     this.setState({ formError: false });
-    // check for required fields
+    // make sure at least name and date are provided
     if (this.state.inputName && this.state.inputDate) {
       axios.post(`http://${document.location.hostname}:3001/api/add`,
         {
@@ -67,12 +67,13 @@ export class App extends React.Component{
           }
         })
         .then(res => this.setState(
+          // reset task form and refresh tasks
           {
             inputName: '',
             inputDescription: '',
             inputDate: null,
             tasks: convertToMomentDate(res.data.tasks),
-          }, () => console.log('input should be null',this.state)
+          }
         ))
         .catch(err => console.log(err));
     } else {
@@ -91,21 +92,23 @@ export class App extends React.Component{
     this.setState({ view: name });
   }
 
+  // passed to newTaskInput form fields
   handleChange(e) {
-    // passed to newTaskInput form fields
     const obj = {};
     obj[e.target.id] = e.target.value;
     this.setState(obj);
   }
 
   completeTask(e, task) {
-    axios.post(`http://${document.location.hostname}:3001/api/complete`, { id: task.id })
+    axios.post(`http://${document.location.hostname}:3001/api/complete`,
+      { id: task.id })
       .then(res => this.setState({ tasks: convertToMomentDate(res.data.tasks) }))
       .catch(err => console.log(err));
   }
 
   deleteTask(e, task) {
-    axios.delete(`http://${document.location.hostname}:3001/api/delete`, { params: { id: task.id }})
+    axios.delete(`http://${document.location.hostname}:3001/api/delete`,
+      { params: { id: task.id }})
       .then(res => this.setState({ tasks: convertToMomentDate(res.data.tasks) }))
       .catch(err => console.log(err));
   }

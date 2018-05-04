@@ -18,7 +18,16 @@ const style = {
 };
 
 export const NewTaskInput = (props) => {
-  const { formError, inputName, inputDescription, inputDate, submitTask, handleChange, changeDate } = props;
+  const {
+    formError,
+    inputName,
+    inputDescription,
+    inputDate,
+    submitTask,
+    handleChange,
+    changeDate,
+  } = props;
+
   return (
     <div>
       <Segment
@@ -73,3 +82,4 @@ export const NewTaskInput = (props) => {
     </div>
   );
 };
+

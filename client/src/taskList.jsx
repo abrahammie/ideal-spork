@@ -3,12 +3,20 @@ import moment from'moment';
 import { Segment } from 'semantic-ui-react';
 import { Task } from'./task.jsx';
 
+// sort tasks by due date
 const compare = (a, b) => {
   return a.date.valueOf() - b.date.valueOf();
 };
 
 export const TaskList = (props) => {
-  const { view, tasks, completeTask, deleteTask, isDueSoon, isOverdue } = props;
+  const {
+    view,
+    tasks,
+    completeTask,
+    deleteTask,
+    isDueSoon,
+    isOverdue,
+  } = props;
 
   // map list of tasks based on view
   if (view === 'All Incomplete') {

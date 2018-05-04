@@ -26,7 +26,7 @@ app.get('/api/getTasks', (req, res) => {
   });
 });
 
-// adds a task to db
+// adds task to db, returns all tasks
 app.post('/api/add', (req, res) => {
   helpers.addNewTask(req.body.newTask, (err, data) => {
     if (err) {
@@ -38,7 +38,7 @@ app.post('/api/add', (req, res) => {
   });
 });
 
-// finds and deletes task from db
+// deletes task from db, returns all tasks
 app.delete('/api/delete', (req, res) => {
   helpers.deleteTask(req.query.id, (err, data) => {
     if (err) {
@@ -50,7 +50,7 @@ app.delete('/api/delete', (req, res) => {
   });
 });
 
-// finds and marks completed property true
+// marks completed property true, returns all tasks
 app.post('/api/complete', (req, res) => {
   helpers.markTaskCompleted(req.body.id, (err, data) => {
     if (err) {
@@ -66,4 +66,3 @@ app.post('/api/complete', (req, res) => {
 app.listen(PORT, '0.0.0.0', () => {
   console.log('Running on port:', PORT);
 });
-
