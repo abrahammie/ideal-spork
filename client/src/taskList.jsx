@@ -14,12 +14,21 @@ export const TaskList = (props) => {
   if (view === 'All Incomplete') {
     return (
       tasks.sort(compare).map((item) => {
+        // check if due soon or overdue to apply task style
+        let taskStyle;
+        if (isDueSoon(item)) {
+          taskStyle = 'dueSoon';
+        } else if (isOverdue(item)) {
+          taskStyle = 'overdue';
+        } else {
+          taskStyle = 'content';
+        }
+        // don't render completed tasks
         if (!item.completed) {
           return (
             <Task
               key={item.id}
-              dueSoon={isDueSoon(item)}
-              overdue={isOverdue(item)}
+              taskStyle={taskStyle}
               completeTask={completeTask}
               deleteTask={deleteTask}
               {...item}
@@ -37,7 +46,7 @@ export const TaskList = (props) => {
               key={item.id}
               completeTask={completeTask}
               deleteTask={deleteTask}
-              dueSoon={true}
+              taskStyle="dueSoon"
               {...item}
             />
           );
@@ -53,7 +62,7 @@ export const TaskList = (props) => {
               key={item.id}
               completeTask={completeTask}
               deleteTask={deleteTask}
-              overdue={true}
+              taskStyle="overdue"
               {...item}
             />
           );

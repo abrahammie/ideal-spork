@@ -16,17 +16,25 @@ const style = {
   segment: {
     margin: 0,
   },
+  overdue: {
+    paddingBottom: 7,
+    backgroundColor: '#ed143d2e',
+  },
+  dueSoon: {
+    paddingBottom: 7,
+    backgroundColor: '#ffd70033'
+  },
 };
 
 export const Task = props => {
-  const { name, description, date, _id, completed, deleteTask, completeTask } = props;
+  const { name, description, date, _id, completed, deleteTask, completeTask, taskStyle } = props;
   return (
     <Segment
       basic
       style={style.segment}>
       <Card>
         <Card.Content
-          style={style.content}>
+          style={style[taskStyle]}>
           <Card.Header>{name}</Card.Header>
           <Card.Content>{description}</Card.Content>
           <Card.Meta>{`Due ${date.calendar(null, {
