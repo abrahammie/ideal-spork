@@ -1,0 +1,20 @@
+dist: trusty
+sudo: required
+language: node_js
+node_js:
+  - "8.11.1"
+services:
+  - docker
+
+before_install:
+  # update version
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
+
+  - docker-compose --version
+
+  # for logging
+  - docker ps
+
+script:
+  - docker-compose -f docker-compose.test.yml build
