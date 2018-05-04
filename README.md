@@ -63,4 +63,4 @@ Tasks can be viewed as a list, displaying each task's name, description, and due
 
 Tasks can be marked as completed if they are not already, and can also be deleted.
 
-An alert appears when tasks are due soon (today and/or tomorrow), or overdue.
+An alert appears when tasks are due soon (today and/or tomorrow) or overdue. Additionally, tasks are yellow if due soon or red if overdue.
