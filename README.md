@@ -1,4 +1,4 @@
-# ideal-spork
+# ideal-spork <img src="https://travis-ci.org/abrahammie/ideal-spork.svg?branch=travis">
 An _ideal_ task manager.
 
 Getting Started
